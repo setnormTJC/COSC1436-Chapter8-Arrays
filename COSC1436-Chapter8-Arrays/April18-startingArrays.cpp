@@ -10,7 +10,12 @@ int main()
     //vector <//"open angle bracket" < close angle bracket > 
     
     string cStyleArray[10] = { "thing 1", "thing 2", "Dr.Seuss" }; //"old-school" C++ 
-    
+    //"static" arrays are FIXED in their size (the array above cannot grow beyond 10 elements)
+    //static arrays are more "conservative" (they use the MINIMAL amount of memory) 
+
+    //in programming fundamentals 3 (Data Structures and Algorithms) 
+    //we'll talk about something called a linked list 
+
     vector<string> groceryList =
     {
         "hard-boiled eggs",

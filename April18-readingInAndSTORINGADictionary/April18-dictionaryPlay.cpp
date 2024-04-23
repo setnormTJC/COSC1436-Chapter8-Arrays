@@ -10,6 +10,10 @@ using namespace std;
 int main()
 {
     vector<string> dictionaryWords; 
+
+    //array (data structure) -> synonymous with "list" (colloquial) 
+                    //AKA: vector in C++ (dynamic array) 
+
     string filePath= "C:\\Users\\Work\\Downloads\\popularWords.txt"; 
 
     ifstream dictionaryFile{ filePath };
