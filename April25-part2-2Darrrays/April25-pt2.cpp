@@ -40,7 +40,7 @@ void printBingoCard(vector<vector<string>> bingoCard)
         << setw(8) << "O" 
         << "\n"; 
         //"column headers"
-    for (vector<string> row : bingoCard)
+    for (vector<string> row : bingoCard) //range-based for loop
     {
         for (string bingoBall : row)
         {
@@ -48,6 +48,23 @@ void printBingoCard(vector<vector<string>> bingoCard)
         }
         cout << "\n";
     }
+}
+
+bool checkIfColumnWin(vector<vector<string>> bingoCard)
+{
+    for (int i = 0; i < bingoCard.size(); i++)
+    {
+        vector<string> currentColumn = bingoCard.at(i); 
+
+        for (string currentBall : currentColumn)
+        {
+            cout << currentBall << " ";
+        }
+
+        cout << "\n";
+    }
+
+    return false; 
 }
 
 
@@ -67,18 +84,22 @@ int main()
     //print2DArray(multiplicationTable); 
 
     //"B12", "I30"
+    //string bingoCard[5][5]; 
+    //bingoCard.
     vector<vector<string>> bingoCard =
     {
         {"B12", "I25", "N41", "G51", "O63"},
-        {"B3", "I30"},
-        {"", ""},
-        {},
-        {"B10", "I17", "N45"}
+        {"B3", "I30", "N37", "G54", "O66"},
+        {"B7", "I21", "FREE", "G56", "O74"},
+        {"B1", "I26", "N35","G50", "O69"},
+        {"B10", "I17", "N45", "G47", "O64"}
     };
 
-    cout << "the intial state of the card :\n"; 
+    //bingoCard.
 
-    printBingoCard(bingoCard); 
+    //cout << "the intial state of the card :\n"; 
+
+    //printBingoCard(bingoCard); 
 
     cout << "The ball with the value B12 rolled out of the ball dispenser!\n"; 
     bingoCard[0][0] = "*"; 
@@ -87,7 +108,8 @@ int main()
     printBingoCard(bingoCard); 
 
     //let's get into determination of "win conditions" next time ... 
-    //checkIfColumnWin(bingoCard); 
+    cout << "Is the game won yet (by having all 5 asterisks in a column)? "
+        << checkIfColumnWin(bingoCard);
 
 
 
